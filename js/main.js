@@ -33,6 +33,41 @@ const sensorChart = new Chart(document.getElementById('sensorChart').getContext(
       },
     },
   });
+  const sensorChart1 = new Chart(document.getElementById('sensorChart1').getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: [],
+      datasets: [
+        {
+          label: 'Acceleration X',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          data: [],
+        },
+        {
+          label: 'Acceleration Y',
+          borderColor: 'rgba(255, 99, 132, 1)',
+          data: [],
+        },
+        {
+          label: 'Acceleration Z',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          data: [],
+        },
+      ],
+    },
+    options: {
+      responsive: false,
+      scales: {
+        x: {
+          type: 'linear',
+          position: 'bottom',
+        },
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
   
   // Function to update the chart with new sensor data
   function updateChart(timestamp, x, y, z) {
@@ -41,6 +76,13 @@ const sensorChart = new Chart(document.getElementById('sensorChart').getContext(
     sensorChart.data.datasets[1].data.push(y);
     sensorChart.data.datasets[2].data.push(z);
     sensorChart.update();
+  }
+  function updateChart1(timestamp, x, y, z) {
+    sensorChart1.data.labels.push(timestamp);
+    sensorChart1.data.datasets[0].data.push(x);
+    sensorChart1.data.datasets[1].data.push(y);
+    sensorChart1.data.datasets[2].data.push(z);
+    sensorChart1.update();
   }
   
   // Simulate updating the chart with random data (replace with actual sensor data)
@@ -83,7 +125,8 @@ window.addEventListener('devicemotion', (event) => {
   position.z += z;
 
   prevTimestamp = timestamp;
-  updateChart(timestamp, x, y, z);
+  updateChart(timestamp, event.accelerationIncludingGravity.x, event.accelerationIncludingGravity.y, event.accelerationIncludingGravity.z);
+  updateChart1(timestamp, event.acceleration.x, event.acceleration.y, event.acceleration.z);
   // Calculate and display estimated distance
   const distance = Math.sqrt(position.x ** 2 + position.y ** 2 + position.z ** 2);
   console.log(`Estimated distance: ${distance} meters`);
