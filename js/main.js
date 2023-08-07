@@ -33,111 +33,111 @@ const sensorChart = new Chart(document.getElementById('sensorChart').getContext(
       },
     },
   });
-  const sensorChart1 = new Chart(document.getElementById('sensorChart1').getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: [],
-      datasets: [
-        {
-          label: 'Acceleration X',
-          borderColor: 'rgba(75, 192, 192, 1)',
-          data: [],
-        },
-        {
-          label: 'Acceleration Y',
-          borderColor: 'rgba(255, 99, 132, 1)',
-          data: [],
-        },
-        {
-          label: 'Acceleration Z',
-          borderColor: 'rgba(54, 162, 235, 1)',
-          data: [],
-        },
-      ],
+const sensorChart1 = new Chart(document.getElementById('sensorChart1').getContext('2d'), {
+type: 'line',
+data: {
+    labels: [],
+    datasets: [
+    {
+        label: 'Acceleration X',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        data: [],
     },
-    options: {
-      responsive: false,
-      scales: {
-        x: {
-          type: 'linear',
-          position: 'bottom',
-        },
-        y: {
-          beginAtZero: true,
-        },
-      },
+    {
+        label: 'Acceleration Y',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        data: [],
     },
-  });
-  const sensorChart2 = new Chart(document.getElementById('sensorChart2').getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: [],
-      datasets: [
-        {
-          label: 'Acceleration X',
-          borderColor: 'rgba(75, 192, 192, 1)',
-          data: [],
-        },
-        {
-          label: 'Acceleration Y',
-          borderColor: 'rgba(255, 99, 132, 1)',
-          data: [],
-        },
-        {
-          label: 'Acceleration Z',
-          borderColor: 'rgba(54, 162, 235, 1)',
-          data: [],
-        },
-      ],
+    {
+        label: 'Acceleration Z',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        data: [],
     },
-    options: {
-      responsive: false,
-      scales: {
-        x: {
-          type: 'linear',
-          position: 'bottom',
-        },
-        y: {
-          beginAtZero: true,
-        },
-      },
+    ],
+},
+options: {
+    responsive: false,
+    scales: {
+    x: {
+        type: 'linear',
+        position: 'bottom',
     },
-  });
-  const sensorChart3 = new Chart(document.getElementById('sensorChart3').getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: [],
-      datasets: [
-        {
-          label: 'Acceleration X',
-          borderColor: 'rgba(75, 192, 192, 1)',
-          data: [],
-        },
-        {
-          label: 'Acceleration Y',
-          borderColor: 'rgba(255, 99, 132, 1)',
-          data: [],
-        },
-        {
-          label: 'Acceleration Z',
-          borderColor: 'rgba(54, 162, 235, 1)',
-          data: [],
-        },
-      ],
+    y: {
+        beginAtZero: true,
     },
-    options: {
-      responsive: false,
-      scales: {
-        x: {
-          type: 'linear',
-          position: 'bottom',
-        },
-        y: {
-          beginAtZero: true,
-        },
-      },
     },
-  });
+},
+});
+const sensorChart2 = new Chart(document.getElementById('sensorChart2').getContext('2d'), {
+type: 'line',
+data: {
+    labels: [],
+    datasets: [
+    {
+        label: 'Acceleration X',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        data: [],
+    },
+    {
+        label: 'Acceleration Y',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        data: [],
+    },
+    {
+        label: 'Acceleration Z',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        data: [],
+    },
+    ],
+},
+options: {
+    responsive: false,
+    scales: {
+    x: {
+        type: 'linear',
+        position: 'bottom',
+    },
+    y: {
+        beginAtZero: true,
+    },
+    },
+},
+});
+const sensorChart3 = new Chart(document.getElementById('sensorChart3').getContext('2d'), {
+type: 'line',
+data: {
+    labels: [],
+    datasets: [
+    {
+        label: 'Acceleration X',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        data: [],
+    },
+    {
+        label: 'Acceleration Y',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        data: [],
+    },
+    {
+        label: 'Acceleration Z',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        data: [],
+    },
+    ],
+},
+options: {
+    responsive: false,
+    scales: {
+    x: {
+        type: 'linear',
+        position: 'bottom',
+    },
+    y: {
+        beginAtZero: true,
+    },
+    },
+},
+});
   
   // Function to update the chart with new sensor data
   function updateChart(timestamp, x, y, z) {
@@ -232,7 +232,7 @@ window.addEventListener('devicemotion', (event) => {
   prevTimestamp = timestamp;
   updateChart(timestamp, event.accelerationIncludingGravity.x, event.accelerationIncludingGravity.y, event.accelerationIncludingGravity.z);
   updateChart1(timestamp, event.acceleration.x, event.acceleration.y, event.acceleration.z);
-  updateChart2(timestamp, event.velocity.x, event.velocity.y, event.velocity.z);
+  updateChart2(timestamp, velocity.x, velocity.y, velocity.z);
   updateChart3(timestamp, x, y, z);
   
   // Calculate and display estimated distance
