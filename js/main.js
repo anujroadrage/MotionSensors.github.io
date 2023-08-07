@@ -222,8 +222,8 @@ window.addEventListener('devicemotion', (event) => {
   prevTimestamp = timestamp;
   updateChart(timestamp, event.accelerationIncludingGravity.x, event.accelerationIncludingGravity.y, event.accelerationIncludingGravity.z);
   updateChart1(timestamp, event.acceleration.x, event.acceleration.y, event.acceleration.z);
-//   updateChart2(timestamp, velocity.x, velocity.y, velocity.z);
-//   updateChart3(timestamp, x, y, z);
+  updateChart2(timestamp, velocity.x, velocity.y, velocity.z);
+  updateChart3(timestamp, x, y, z);
   
   // Calculate and display estimated distance
   const distance = Math.sqrt(position.x ** 2 + position.y ** 2 + position.z ** 2);
