@@ -145,6 +145,11 @@ const sensorChart = new Chart(document.getElementById('sensorChart').getContext(
     sensorChart.data.datasets[0].data.push(x);
     sensorChart.data.datasets[1].data.push(y);
     sensorChart.data.datasets[2].data.push(z);
+    if(sensorChart.data.labels.length >1000)
+        sensorChart.data.labels.shift()
+        sensorChart.data.datasets[0].data.shift();
+        sensorChart.data.datasets[1].data.shift();
+        sensorChart.data.datasets[2].data.shift();
     sensorChart.update();
   }
   function updateChart1(timestamp, x, y, z) {
@@ -152,6 +157,11 @@ const sensorChart = new Chart(document.getElementById('sensorChart').getContext(
     sensorChart1.data.datasets[0].data.push(x);
     sensorChart1.data.datasets[1].data.push(y);
     sensorChart1.data.datasets[2].data.push(z);
+    if(sensorChart1.data.labels.length >1000)
+        sensorChart1.data.labels.shift()
+        sensorChart1.data.datasets[0].data.shift();
+        sensorChart1.data.datasets[1].data.shift();
+        sensorChart1.data.datasets[2].data.shift();
     sensorChart1.update();
   }
   function updateChart2(timestamp, x, y, z) {
@@ -159,6 +169,11 @@ const sensorChart = new Chart(document.getElementById('sensorChart').getContext(
     sensorChart2.data.datasets[0].data.push(x);
     sensorChart2.data.datasets[1].data.push(y);
     sensorChart2.data.datasets[2].data.push(z);
+    if(sensorChart2.data.labels.length >1000)
+        sensorChart2.data.labels.shift()
+        sensorChart2.data.datasets[0].data.shift();
+        sensorChart2.data.datasets[1].data.shift();
+        sensorChart2.data.datasets[2].data.shift();
     sensorChart2.update();
   }
   function updateChart3(timestamp, x, y, z) {
@@ -166,6 +181,12 @@ const sensorChart = new Chart(document.getElementById('sensorChart').getContext(
     sensorChart3.data.datasets[0].data.push(x);
     sensorChart3.data.datasets[1].data.push(y);
     sensorChart3.data.datasets[2].data.push(z);
+    if(sensorChart3.data.labels.length >1000)
+        sensorChart3.data.labels.shift()
+        sensorChart3.data.datasets[0].data.shift();
+        sensorChart3.data.datasets[1].data.shift();
+        sensorChart3.data.datasets[2].data.shift();
+
     sensorChart3.update();
   }
   
