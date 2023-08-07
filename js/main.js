@@ -189,16 +189,6 @@ options: {
 
     sensorChart3.update();
   }
-  
-  // Simulate updating the chart with random data (replace with actual sensor data)
-  setInterval(() => {
-    const timestamp = new Date().getTime();
-    const x = Math.random() * 10; // Replace with actual sensor data
-    const y = Math.random() * 10; // Replace with actual sensor data
-    const z = Math.random() * 10; // Replace with actual sensor data
-  
-    // updateChart(timestamp, x, y, z);
-  }, 1000); // Update every 1 second
 
 let startTime = null;
 let prevTimestamp = null;
@@ -230,10 +220,10 @@ window.addEventListener('devicemotion', (event) => {
   position.z += z;
 
   prevTimestamp = timestamp;
-  updateChart(timestamp, event.accelerationIncludingGravity.x, event.accelerationIncludingGravity.y, event.accelerationIncludingGravity.z);
-  updateChart1(timestamp, event.acceleration.x, event.acceleration.y, event.acceleration.z);
-  updateChart2(timestamp, velocity.x, velocity.y, velocity.z);
-  updateChart3(timestamp, x, y, z);
+//   updateChart(timestamp, event.accelerationIncludingGravity.x, event.accelerationIncludingGravity.y, event.accelerationIncludingGravity.z);
+  updateChart(timestamp, event.acceleration.x, event.acceleration.y, event.acceleration.z);
+  updateChart1(timestamp, velocity.x, velocity.y, velocity.z);
+  updateChart2(timestamp, x, y, z);
   
   // Calculate and display estimated distance
   const distance = Math.sqrt(position.x ** 2 + position.y ** 2 + position.z ** 2);
